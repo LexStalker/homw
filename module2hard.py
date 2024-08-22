@@ -116,7 +116,7 @@ for i in pairnum1:
                 result = result + str(pn1) + str(pn2)
 print(*pairs)
 print(result)
-[eqysdyadasdasdasdasd
+
 
 
 

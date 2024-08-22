@@ -12,5 +12,3 @@ while n < len(my_list):
         print(number)
     else:
         print(number)
-
-

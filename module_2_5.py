@@ -21,12 +21,16 @@ def get_matrix(n, m, value):        # Объявите функцию get_matrix
     print(matrix)
     return matrix                   # После всех циклов верните значение переменной matrix.
 
-n = int(input('Задайте количество строк:' ))
-m = int(input('Задайте количество столбцов: '))
-value = input('Задайте значение: ')
-print('  ' *m)
-matrix = get_matrix(n, m, value)        # Выведите на экран(консоль) результат работы функции get_matrix.
+# n = int(input('Задайте количество строк:' ))
+# m = int(input('Задайте количество столбцов: '))
+# value = input('Задайте значение: ')
 
+result1 = get_matrix(2, 2, 10)
+result2 = get_matrix(3, 5, 42)
+result3 = get_matrix(4, 2, 13)
+print(result1)
+print(result2)
+print(result3)
 
 
 

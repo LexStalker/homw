@@ -1,9 +1,9 @@
-my_dict = {'Alex' : 1994, 'Denis' : 2002}
+my_dict = {'Alex': 1994, 'Denis': 2002}
 print(my_dict)
 print(my_dict['Alex'])
 print(my_dict.get('Egor'))
-my_dict.update({'Damir' : 1991,
-                'Chery' :2024})
+my_dict.update({'Damir': 1991,
+                'Chery': 2024})
 print(my_dict)
 a = my_dict.pop('Chery')
 print(my_dict)

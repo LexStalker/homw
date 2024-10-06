@@ -8,6 +8,10 @@ class Eagle:
     sound = 'I train, eat, sleep, and repeat'
     def fly(self, dy):
         self.y_distance += dy
+
+    def voice(self):
+        print(self.sound)
+
 class Pegasus(Horse, Eagle):
    def __init__(self):
        self.sound = super()._sound
@@ -18,8 +22,7 @@ class Pegasus(Horse, Eagle):
    def get_pos(self):
        pos_pegasus = (self.x_distance, self.y_distance)
        return pos_pegasus
-   def voice(self):
-       print(self.sound)
+
 
 p1 = Pegasus()
 

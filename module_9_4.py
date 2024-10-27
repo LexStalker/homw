@@ -1,6 +1,6 @@
 first = 'Мама мыла раму'
 second = 'Рамена мало было'
-compare = map(lambda x, y: list(x) == list(y), first, second)
+compare = map(lambda x, y: x == y, first, second)
 print(list(compare))
 
 def get_advanced_writer(file_name):

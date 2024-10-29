@@ -10,9 +10,9 @@ def get_advanced_writer(file_name):
 
     return write_everything
 
-write = get_advanced_writer('example.txt')
+write = get_advanced_writer('example1.txt')
 write('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
-with open('example.txt', "r") as f: print(f.read())
+with open('example1.txt', "r") as f: print(f.read())
 
 class MysticBall:
     from random import choice

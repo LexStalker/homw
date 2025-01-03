@@ -2,27 +2,26 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import asyncio
 
 
 api = '7855279448:AAEkYcgwlZiuuGYsvBmM1YFGwwmXcBfigtE'
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
+kb = ReplyKeyboardMarkup()
+button = KeyboardButton(text = 'Info')
+button1 = KeyboardButton(text= 'Buy')
+kb.add(button1)
+kb.add(button)
+# kb.row kb.insert
+@dp.message_handler(commands= ['start'])
+async def start(message):
+    await message.answer('Hello', reply_markup = kb)
 
-class UserState(StatesGroup):
-    adress = State()
-
-@dp.message_handler(text= 'Заказать')
-async def buy(message):
-    await message.answer('Отправь свой адрес')
-    await UserState.adress.set()
-
-@dp.message_handler(state= UserState.adress)
-async def fsm_handler(message, state):
-    await state.update_data(first = message.text)
-    data = await state.get_data()
-    await message.answer(f"Доставка будет отправлена на {data['first']}")
-    await state.finish()
+@dp.message_handler(text = 'Info')
+async def inform(message):
+    await message.answer('Info bot')
 
 # @dp.message_handler(text = ['MMS'])
 # async def mms_message(message):

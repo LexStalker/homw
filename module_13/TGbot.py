@@ -3,40 +3,36 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 
 
 api = '7855279448:AAEkYcgwlZiuuGYsvBmM1YFGwwmXcBfigtE'
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
-kb = ReplyKeyboardMarkup()
-button = KeyboardButton(text = 'Info')
-button1 = KeyboardButton(text= 'Buy')
-kb.add(button1)
+kb = InlineKeyboardMarkup()
+button = InlineKeyboardButton(text = 'Информация', callback_data= 'info')
 kb.add(button)
-# kb.row kb.insert
-@dp.message_handler(commands= ['start'])
-async def start(message):
-    await message.answer('Hello', reply_markup = kb)
+start_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text= 'Info')],
+    [
+        KeyboardButton(text= 'Shop'),
+        KeyboardButton(text= 'Donate')
+    ]
+    ],resize_keyboard = True
+)
+@dp .message_handler(commands=['start'])
+async def starter(message):
+    await message.answer("Рады вас видеть", reply_markup= start_menu)
 
-@dp.message_handler(text = 'Info')
-async def inform(message):
-    await message.answer('Info bot')
+# @dp.callback_query_handler(text= 'info')
+# async def infor(call):
+#     await call.message.answer("Информация о боте")
+#     await call.answer()
 
-# @dp.message_handler(text = ['MMS'])
-# async def mms_message(message):
-#     print('mms message ')
-#     await message.answer('mms message!')
-#
-# @dp.message_handler(commands=['Start'])
-# async def start_message(message):
-#     print('start message')
-#     await message.answer('Hello ')
-#
-# @dp.message_handler()
-# async def all_message(message):
-#     print('SMS')
-#     await message.answer(message.text)
+
+
 
 
 if __name__ == "__main__":

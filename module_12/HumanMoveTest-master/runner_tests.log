@@ -1,0 +1,19 @@
+2025-01-03 09:09:41,780) | INFO | "test_walk1" выполнен успешно
+2025-01-03 09:09:41,781) | ERROR | Ошибка-"test2_walk"
+Traceback (most recent call last):
+  File "E:\ProjectUnivers\pythonProject\University\module_12\HumanMoveTest-master\tests_12_4.py", line 36, in test2_walk
+    r1 = runner.Runner("Ходок", -8)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ProjectUnivers\pythonProject\University\module_12\HumanMoveTest-master\rt_with_exceptions.py", line 11, in __init__
+    raise ValueError(f'Скорость не может быть отрицательной, сейчас {speed}')
+ValueError: Скорость не может быть отрицательной, сейчас -8
+2025-01-03 09:09:41,794) | INFO | "test_challenge" выполнен успешно
+2025-01-03 09:09:41,794) | INFO | "test_run" выполнен успешно
+2025-01-03 09:09:41,795) | ERROR | Ошибка - "test_walk"
+Traceback (most recent call last):
+  File "E:\ProjectUnivers\pythonProject\University\module_12\HumanMoveTest-master\tests_12_4.py", line 12, in test_walk
+    r1 = runner.Runner(7, 4)
+         ^^^^^^^^^^^^^^^^^^^
+  File "E:\ProjectUnivers\pythonProject\University\module_12\HumanMoveTest-master\rt_with_exceptions.py", line 6, in __init__
+    raise TypeError(f'Имя может быть только строкой, передано {type(name).__name__}')
+TypeError: Имя может быть только строкой, передано int

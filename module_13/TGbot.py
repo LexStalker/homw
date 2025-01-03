@@ -10,13 +10,17 @@ dp = Dispatcher(bot, storage= MemoryStorage())
 @dp.message_handler(text = ['MMS'])
 async def mms_message(message):
     print('mms message ')
+    await message.answer('mms message!')
 
 @dp.message_handler(commands=['Start'])
 async def start_message(message):
     print('start message')
+    await message.answer('Hello ')
+
 @dp.message_handler()
 async def all_message(message):
     print('SMS')
+    await message.answer(message.text)
 
 
 if __name__ == "__main__":

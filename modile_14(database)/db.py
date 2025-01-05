@@ -29,8 +29,23 @@ cursor.execute(" CREATE INDEX IF NOT EXISTS idx_email ON Users (email) ")
 
 #cursor.execute(" SELECT age, AVG(age) FROM Users GROUP BY AGE")
 
-users = cursor.fetchall()
-for user in users:
-    print(user)
+# cursor.execute("SELECT SUM(age) FROM Users")
+# total1 = cursor.fetchone()[0]
+# cursor.execute("SELECT COUNT(*) FROM Users")
+# total2 = cursor.fetchone()[0]
+# print(total1, total1/total2)
+# cursor.execute("SELECT AVG(age) FROM Users")
+# avr_age = cursor.fetchone()[0]
+# print(avr_age)
+
+cursor.execute("SELECT SUM(age) FROM Users")
+total1 = cursor.fetchone()[0]
+cursor.execute("SELECT COUNT(*) FROM Users")
+total2 = cursor.fetchone()[0]
+print(total1, total1/total2)
+cursor.execute("SELECT MIN(age) FROM Users") # «COUNT», «SUM», «AVG», «MIN» и «MAX»
+avr_age = cursor.fetchone()[0]
+print(avr_age)
+
 connection.commit()
 connection.close()

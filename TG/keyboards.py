@@ -21,6 +21,7 @@ catalog_kb = InlineKeyboardMarkup(
 )
 buy_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text="Купить", url="http://google.ru")]
+        [InlineKeyboardButton(text="Купить", url="http://google.ru")],
+        [InlineKeyboardButton(text="Назад", callback_data="back_to_catalog")]
     ]
 )

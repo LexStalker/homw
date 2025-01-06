@@ -10,7 +10,10 @@ import asyncio
 
 from config import *
 from keyboards import *
+from admin import *
+from db1 import *
 import texts
+
 
 
 logging.basicConfig(level= logging.INFO)
